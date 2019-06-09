@@ -31,7 +31,7 @@ snowflake.turtle.hideturtle()
 # ==================================================== Draw Maze =================================================
 
 
-def maze(length, iteration, char, first=False):
+def hilbert_maze(length, iteration, char, first=False):
     if first:
         length = int(length / (2.4**iteration))
 
@@ -49,13 +49,13 @@ def maze(length, iteration, char, first=False):
             elif char == "-":
                 turtle.right(90)
             elif char == "a":
-                maze(length, iteration - 1, 'a')
+                hilbert_maze(length, iteration - 1, 'a')
             elif char == "b":
-                maze(length, iteration - 1, 'b')
+                hilbert_maze(length, iteration - 1, 'b')
 
 
 turtle = Turtle()
 window = turtle.getscreen()
 turtle.speed('fastest')
-maze(600, 4, 'a', True)
+hilbert_maze(600, 4, 'a', True)
 window.exitonclick()

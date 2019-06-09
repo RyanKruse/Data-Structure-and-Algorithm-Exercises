@@ -2,3 +2,5 @@
 /__pycache__
 /venv
 *.docx
+brute_force.py
+grave_yard.py
