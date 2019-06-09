@@ -3,18 +3,18 @@ In this project, I write code using data structures and algorithms to solve vari
 
 ## Data Structure Timer Graphs
 
-##### Push and Pop Stack Times
+###### Push and Pop Stack Times
 <p align="center">
 	<img src="supplemental/Stacks.PNG"></img>
 </p>
 
-##### Enqueue and Dequeue Queue Times
+###### Enqueue and Dequeue Queue Times
 
 <p align="center">
 	<img src="supplemental/Queues.PNG"></img>
 </p>
 
-##### Python, Binary, and Sequential Search Times
+###### Python, Binary, and Sequential Search Times
 
 <p align="center">
 	<img src="supplemental/Searches.PNG"></img>
@@ -22,31 +22,31 @@ In this project, I write code using data structures and algorithms to solve vari
 
 ## Recursion Graphics Using Python Turtles
 
-##### Tree
+###### Tree
 
 <p align="center">
 	<img src="supplemental/Tree.PNG"></img>
 </p>
 
-##### Hilbert Maze
+###### Hilbert Maze
 
 <p align="center">
 	<img src="supplemental/Hilbert.PNG"></img>
 </p>
 
-##### Koch Snowflake
+###### Koch Snowflake
 
 <p align="center">
 	<img src="supplemental/Snowflake.PNG"></img>
 </p>
 
-##### Sierpinski's Triangle
+###### Sierpinski's Triangle
 
 <p align="center">
 	<img src="supplemental/Sierpinski.PNG"></img>
 </p>
 
-## Visualization of Sorting Algorithms in Excel
+## Visualization of Sorting Algorithms
 
 <p align="center">
 	<img src="supplemental/Sorting.png"></img>
