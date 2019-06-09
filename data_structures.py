@@ -211,7 +211,7 @@ class LinkedList:
         self.head = None
 
     def __str__(self):
-        """COMPLETE: Gets a printable string of the list."""
+        """Gets a printable string of the list."""
         if self.head is None:
             return '[]'
         a_string = '['
@@ -225,13 +225,13 @@ class LinkedList:
         return a_string[:-2] + ']'
 
     def add(self, item):
-        """COMPLETE: Adds an item to the start of the list."""
+        """Adds an item to the start of the list."""
         node = Node(item)
         node.next = self.head
         self.head = node
 
     def remove(self, item):
-        """COMPLETE: Removes the first occurrence of an item in a list."""
+        """Removes the first occurrence of an item in a list."""
         current = self.head
         previous = None
         while current is not None:
@@ -245,7 +245,7 @@ class LinkedList:
             current = current.next
 
     def search(self, item):
-        """COMPLETE: Checks to see if an item is in the list. Returns a bool."""
+        """Checks to see if an item is in the list. Returns a bool."""
         current = self.head
         while current is not None:
             if current.data == item:
@@ -254,11 +254,11 @@ class LinkedList:
         return False
 
     def isempty(self):
-        """COMPLETE: Checks to see if list is empty."""
+        """Checks to see if list is empty."""
         return self.head is None
 
     def length(self):
-        """COMPLETE: Traverses the entire list and returns list length."""
+        """Traverses the entire list and returns list length."""
         current = self.head
         index = 0
         while current is not None:
@@ -267,7 +267,7 @@ class LinkedList:
         return index
 
     def index(self, item):
-        """COMPLETE: Takes an item and finds the index of the item in the list."""
+        """Takes an item and finds the index of the item in the list."""
         current = self.head
         index = 0
         while current is not None:
@@ -277,7 +277,7 @@ class LinkedList:
             index += 1
 
     def get(self, position):
-        """COMPLETE: Takes an index and returns the item in that list index."""
+        """Takes an index and returns the item in that list index."""
         index = 0
         current = self.head
         while current is not None:
@@ -287,7 +287,7 @@ class LinkedList:
             index += 1
 
     def pop(self, position=0):
-        """COMPLETE: Pops an item from the list. If no position is provided, pop's head."""
+        """Pops an item from the list. If no position is provided, pop's head."""
         current = self.head
         previous = None
         index = 0
@@ -312,7 +312,7 @@ class LinkedList:
         return temp
 
     def slice(self, start, stop):
-        """COMPLETE: Takes 2 integer inputs and returns an unordered linked list with nodes between those inputs."""
+        """Takes 2 integer inputs and returns an unordered linked list with nodes between those inputs."""
         current = self.head
         sliced_list = UnorderedList()
         index = 0
@@ -335,7 +335,7 @@ class LinkedList:
         return sliced_list
 
     def reverse(self):
-        """************: Reverses the linked list."""
+        """Reverses the linked list."""
         previous = None
         current = self.head
         nex = current.next
@@ -355,7 +355,7 @@ class UnorderedList(LinkedList):
         super().__init__()
 
     def append(self, item):
-        """COMPLETE: Adds an item to the end of the list."""
+        """Adds an item to the end of the list."""
         current = self.head
         if self.head is None:
             self.head = Node(item)
@@ -365,7 +365,7 @@ class UnorderedList(LinkedList):
         current.next = Node(item)
 
     def insert(self, position, item):
-        """COMPLETE: Takes an item and a position and inserts that item as a node in the list."""
+        """Takes an item and a position and inserts that item as a node in the list."""
         node = Node(item)
         current = self.head
         previous = None
@@ -393,7 +393,7 @@ class OrderedList(LinkedList):
         super().__init__()
 
     def add(self, item):
-        """COMPLETE: Adds an item in the ordered position in the list. Can stop early."""
+        """Adds an item in the ordered position in the list. Can stop early."""
         current = self.head
         previous = None
         node = Node(item)
@@ -412,7 +412,7 @@ class OrderedList(LinkedList):
         previous.next = node
 
     def remove(self, item):
-        """COMPLETE: Removes the first occurrence of an item in a list. Can stop early."""
+        """Removes the first occurrence of an item in a list. Can stop early."""
         current = self.head
         previous = None
         while current is not None:
@@ -428,7 +428,7 @@ class OrderedList(LinkedList):
             current = current.next
 
     def search(self, item):
-        """COMPLETE: Checks to see if an item is in the list. Returns a bool. Can stop early."""
+        """Checks to see if an item is in the list. Returns a bool. Can stop early."""
         current = self.head
         while current is not None:
             if current.data == item:
@@ -439,7 +439,7 @@ class OrderedList(LinkedList):
         return False
 
     def index(self, item):
-        """COMPLETE: Takes an item and finds the index of the item in the list. Can stop early."""
+        """Takes an item and finds the index of the item in the list. Can stop early."""
         current = self.head
         index = 0
         while current is not None:
@@ -467,7 +467,7 @@ class DoublyLinkedList:
         self.tail = None
 
     def __str__(self):
-        """COMPLETE: Gets a printable string of the list."""
+        """Gets a printable string of the list."""
         if self.head is None:
             return '[]'
         a_string = '['
@@ -481,7 +481,7 @@ class DoublyLinkedList:
         return a_string[:-2] + ']'
 
     def add(self, item):
-        """COMPLETE: Adds an item to the start of the list."""
+        """Adds an item to the start of the list."""
         node = DoublyNode(item)
         if self.head is not None:
             self.head.back = node
@@ -491,7 +491,7 @@ class DoublyLinkedList:
         self.head = node
 
     def remove(self, item):
-        """COMPLETE: Removes the first occurrence of an item in a list."""
+        """Removes the first occurrence of an item in a list."""
         current = self.head
         previous = None
         while current is not None:
@@ -513,7 +513,7 @@ class DoublyLinkedList:
             current = current.next
 
     def search(self, item):
-        """COMPLETE: Checks to see if an item is in the list. Returns a bool."""
+        """Checks to see if an item is in the list. Returns a bool."""
         current = self.head
         while current is not None:
             if current.data == item:
@@ -522,11 +522,11 @@ class DoublyLinkedList:
         return False
 
     def isempty(self):
-        """COMPLETE: Checks to see if list is empty."""
+        """Checks to see if list is empty."""
         return self.head is None
 
     def length(self):
-        """COMPLETE: Traverses the entire list and returns list length."""
+        """Traverses the entire list and returns list length."""
         current = self.head
         index = 0
         while current is not None:
@@ -535,7 +535,7 @@ class DoublyLinkedList:
         return index
 
     def index(self, item):
-        """COMPLETE: Takes an item and finds the index of the item in the list."""
+        """Takes an item and finds the index of the item in the list."""
         current = self.head
         index = 0
         while current is not None:
@@ -545,7 +545,7 @@ class DoublyLinkedList:
             index += 1
 
     def get(self, position):
-        """COMPLETE: Takes an index and returns the item in that list index."""
+        """Takes an index and returns the item in that list index."""
         index = 0
         if position < 0:
             current = self.tail
@@ -563,7 +563,7 @@ class DoublyLinkedList:
                 index += 1
 
     def pop(self, position=0):
-        """COMPLETE: Pops an item from the list. If no position is provided, pop's head."""
+        """Pops an item from the list. If no position is provided, pop's head."""
         current = self.head
         index = 0
         if not isinstance(position, int):
@@ -601,7 +601,7 @@ class DoublyLinkedList:
         return temp
 
     def slice(self, start, stop):
-        """COMPLETE: Takes 2 integer inputs and returns an unordered linked list with nodes between those inputs."""
+        """Takes 2 integer inputs and returns an unordered linked list with nodes between those inputs."""
         # TODO: It is possible to accept negative values. It is possible to have start >= stop.
         current = self.head
         sliced_list = DoublyLinkedList()
@@ -625,8 +625,7 @@ class DoublyLinkedList:
         return sliced_list
 
     def reverse(self):
-        """************: Reverses the linked list."""
-        # TODO: I have no idea how this works, or the SinglyLinkedList.reverse works.
+        """Reverses the linked list."""
         previous = None
         current = self.head
         self.tail = current
@@ -653,7 +652,7 @@ class DoublyLinkedList:
         self.tail = node
 
     def insert(self, position, item):
-        """COMPLETE: Takes an item and a position and inserts that item as a node in the list."""
+        """Takes an item and a position and inserts that item as a node in the list."""
         node = DoublyNode(item)
         current = self.head
         previous = None
@@ -682,7 +681,7 @@ class DoublyLinkedList:
         node.back = previous
 
 
-def test_case_1():
+def test_1():
     """Add and Remove functions work correctly."""
     temp = DoublyLinkedList()
     temp.add(10)
@@ -710,7 +709,7 @@ def test_case_1():
     print(f'temp.tail.back = {temp.tail.back}')
 
 
-def test_case_2():
+def test_2():
     """Index and Get functions work correctly."""
     temp = DoublyLinkedList()
     temp.add(10)
@@ -738,7 +737,7 @@ def test_case_2():
     print(f'temp.get(-6) = {temp.get(-6)}')
 
 
-def test_case_3():
+def test_3():
     """Pop() and Pop(index) functions work correctly."""
     temp = DoublyLinkedList()
     temp.add(10)
@@ -762,7 +761,7 @@ def test_case_3():
     print(f'temp.tail.back = {temp.tail.back}')
 
 
-def test_case_4():
+def test_4():
     """Slice and Reverse functions work correctly."""
     temp = DoublyLinkedList()
     temp.add(10)
@@ -782,7 +781,7 @@ def test_case_4():
     print(f'temp.tail.back = {sliced.tail.back}')
 
 
-def test_case_5():
+def test_5():
     """Append and Insert functions work correctly."""
     temp = DoublyLinkedList()
     temp.append(20)
@@ -801,4 +800,10 @@ def test_case_5():
     print(f'temp.tail.back = {temp.tail.back}')
 
 
-
+run_test = False
+if run_test:
+    test_1()
+    test_2()
+    test_3()
+    test_4()
+    test_5()

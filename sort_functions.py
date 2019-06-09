@@ -175,11 +175,10 @@ def test_sort(alist):
         print("%s: %s --> (Returns %s) --> %s" % (sort_names[index], alist, exec(execution_string), unsorted_list))
 
 
-# TODO: Bubble sort is throwing errors.
 list_input1 = [25, 95, 45, 96, 56, 24, 0, 7, 83]
 list_input2 = [4, 9, 6, 10, 7, 5, 1, 3, 8, 2]  # Completely Random List
 list_input3 = [3, 1, 4, 2, 5, 7, 8, 6, 10, 9]  # Partially Sorted List
 list_input4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]  # Completely Sorted List
 list_input5 = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]  # Completely Reverse Sorted List
 list_input6 = ['P', 'Y', 'T', 'H', 'O', 'N', '!']  # Character List
-# test_sort(list_input6)
+test_sort(list_input2)

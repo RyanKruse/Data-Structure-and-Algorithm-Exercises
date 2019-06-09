@@ -1,5 +1,6 @@
+# A fully working calculator that accepts arithmetic operations from console.
 import string
-from Allies import Stack
+from data_structures import Stack
 
 
 class Calculator:

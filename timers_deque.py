@@ -1,17 +1,16 @@
-from Allies import InsertQueue, AppendQueue, StackQueue, UnorderedList, LinkedQueue, LinkedStack, Stack, \
+from data_structures import InsertQueue, AppendQueue, StackQueue, UnorderedList, LinkedQueue, LinkedStack, Stack, \
     DoublyLinkedQueue
 from collections import deque
 import pygal
 import timeit
 
-# TODO: Fix variable names.
-# TODO: Figure out how reverse function works.
-# TODO: Some tests only run 10 or .1% of the time. Note them in the print statements.
-# TODO: Combine Enqueue and Dequeue Timer for-loops.
-# TODO: Make the lists appear clean and tidy and consistent.
+
+# ================================================== Test 1 ========================================================
+
+
 # Test of Enqueue Times
-print(
-    "\nEnqueue Speeds in Deque (append) vs. AppendQueue (append) vs. InsertQueue (insert(0)) vs. StackQueue (push) vs. DoublyQueue (add)")
+print("\nEnqueue Speeds in Deque (append) vs. AppendQueue (append) vs. "
+      "InsertQueue (insert(0)) vs. StackQueue (push) vs. DoublyQueue (add)")
 print('%23s%23s%17s%16s%17s' % ('Deque', 'AppendQueue', 'InsertQueue', 'StackQueue', 'DoublyQueue'))
 enqueue_time = timeit.Timer("x.enqueue(0)", "from __main__ import x")
 deque_enqueue_time = timeit.Timer("x.append(0)", "from __main__ import x")
@@ -45,9 +44,13 @@ for size in range(1000, 5001, 1000):
     print("Enqueued %d: %10.5f  %15.5f  %15.5f  %15.5f %15.5f"
           % (size, deque_speed, reverse_queue_speed, queue_speed, queue_stack_speed, linked_queue_speed))
 
+
+# ================================================== Test 2 ========================================================
+
+
 # Test of Dequeue Times
-print(
-    "\nDequeue Speeds in Deque (popleft) vs. AppendQueue (pop(0)) vs. InsertQueue (pop) vs. StackQueue (stack.pop) vs. DoublyQueue (pop(-1))")
+print("\nDequeue Speeds in Deque (popleft) vs. AppendQueue (pop(0)) vs. "
+      "InsertQueue (pop) vs. StackQueue (stack.pop) vs. DoublyQueue (pop(-1))")
 print('%23s%23s%17s%16s%17s' % ('Deque', 'AppendQueue', 'InsertQueue', 'StackQueue', 'DoublyQueue'))
 dequeue_time = timeit.Timer("x.dequeue()", "from __main__ import x")
 deque_dequeue_time = timeit.Timer("x.popleft()", "from __main__ import x")
@@ -125,8 +128,11 @@ bar_chart.add('StackQueue', queue_stack_times3)
 bar_chart.add('DoublyQueue', linked_queue_times3)
 bar_chart.render_to_file('graphs/timeit.queues.svg')
 
-# Compares performance of a python list vs. linked list. Append.
 
+# ================================================== Test 3 ========================================================
+
+
+# Test performance of a python list vs. linked list. Append.
 print("\nAdding elements in linked (add) vs. linked (append) vs. list (append) vs. list (insert(0)).")
 print('%28s%25s%20s%25s' % ('linked.add', 'linked.append', 'list.append', 'list.insert(0)'))
 linked_head_time = timeit.Timer("x.add(0)", "from __main__ import x")
@@ -170,8 +176,11 @@ bar_chart.add('list.append', list_head_times)
 bar_chart.add('list.insert(0)', list_tail_times)
 bar_chart.render_to_file('graphs/timeit.add_items.svg')
 
-# Compares performance of a python list vs. linked list. Pop.
 
+# ================================================== Test 4 ========================================================
+
+
+# Test performance of a python list vs. linked list. Pop.
 print("\nPopping tail elements in linked vs. list.")
 print('%30s%19s' % ('linked.pop(-1)', 'list.pop(0)'))
 linked_pop_time = timeit.Timer("x.pop(x.length()-1)", "from __main__ import x")
@@ -206,8 +215,11 @@ bar_chart.add('linked.pop', linked_pop_times)
 bar_chart.add('list.pop', list_pop_times)
 bar_chart.render_to_file('graphs/timeit.pop_items.svg')
 
-# Compares performance of a python list vs. linked list. Slice.
 
+# ================================================== Test 5 ========================================================
+
+
+# Test performance of a python list vs. linked list. Slice.
 print("\nSlicing all elements in linked vs. list.")
 print('%28s%17s' % ('linked.slice', 'list[:]'))
 linked_slice_time = timeit.Timer("x.slice(0, x.length())", "from __main__ import x")
@@ -241,8 +253,11 @@ bar_chart.add('linked.slice', linked_slice_times)
 bar_chart.add('list[:]', list_slice_times)
 bar_chart.render_to_file('graphs/timeit.slice_items.svg')
 
-# Compares performance of a Deque vs. Stack vs. LinkedStack.
 
+# ================================================== Test 6 ========================================================
+
+
+# Test performance of a Deque vs. Stack vs. LinkedStack.
 print("\nPushing and Popping items in Deque vs. Stack vs. LinkedStack")
 print('%30s%20s%28s%15s%22s%28s' % (
 'Deque.append', 'Stack.push', 'LinkedStack.push', 'Deque.pop', 'Stack.pop', 'LinkedStack.pop'))
@@ -297,7 +312,13 @@ bar_chart.add('Stack', stack_times)
 bar_chart.add('LinkedStack', linked_stack_times)
 bar_chart.render_to_file('graphs/timeit.stacks.svg')
 
-# Test of LinkedListQueue Enqueue Times
+
+# ================================================== Test 7 ========================================================
+
+
+# Test of LinkedListQueue Enqueue and Dequeue Times.
+
+# Test of LinkedListQueue Enqueue Times.
 print("\nEnqueue Speeds in SinglyLinkedQueue vs. DoublyLinkedQueue")
 print('%45s%27s' % ('SinglyLinkedQueue', 'DoublyLinkedQueue'))
 enqueue_time = timeit.Timer("x.enqueue(0)", "from __main__ import x")
@@ -315,7 +336,8 @@ for size in range(1000, 5001, 1000):
 
     print("Enqueued %d: %20.5f  %25.5f" % (size, singly_queue_speed, doubly_queue_speed))
 
-# Test of LinkedListQueue Dequeue Times
+
+# Test of LinkedListQueue Dequeue Times.
 print("\nDequeue Speeds in SinglyLinkedQueue vs. DoublyLinkedQueue")
 print('%45s%27s' % ('SinglyLinkedQueue', 'DoublyLinkedQueue'))
 dequeue_time = timeit.Timer("x.dequeue()", "from __main__ import x")
@@ -362,3 +384,9 @@ bar_chart.y_title = "Speed (Seconds)"
 bar_chart.add('SinglyLinkedQueue', singly_queue_times3)
 bar_chart.add('DoublyLinkedQueue', doubly_queue_times3)
 bar_chart.render_to_file('graphs/timeit.linked_queues.svg')
+
+# TODO: Fix variable names.
+# TODO: Figure out how reverse function works.
+# TODO: Some tests only run 10 or .1% of the time. Note them in the print statements.
+# TODO: Combine Enqueue and Dequeue Timer for-loops.
+# TODO: Make the lists appear clean and tidy and consistent.

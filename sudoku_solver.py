@@ -229,7 +229,7 @@ class SudokuSolver:
            5) ...If both values did not fail --> reset puzzle and continue to next cell.
 
         There is a possibility that after trying all binary cells we still don't make any progress.
-        This function requires dynamic recursive programming for such scenario and is mentioned in the TODO.
+        This function requires dynamic recursive programming for such scenario.
         """
         self.print_progress()
         self.brute_solutions = self.answer_dictionary.copy()
@@ -282,46 +282,25 @@ class SudokuSolver:
         self.puzzle_final = [x[:] for x in self.puzzle_final_backup]
 
 
-NYT_puzzle_easy1 = [4, 7, 1, 0, 3, 5, 0, 0, 0,
-                    9, 0, 0, 0, 0, 8, 0, 6, 3,
-                    6, 3, 0, 1, 0, 0, 0, 5, 4,
-                    7, 0, 6, 0, 0, 0, 0, 2, 0,
-                    0, 9, 0, 5, 0, 0, 4, 1, 8,
-                    0, 0, 0, 9, 2, 3, 5, 0, 0,
-                    8, 4, 9, 0, 0, 7, 0, 0, 0,
-                    0, 1, 0, 3, 0, 4, 9, 0, 0,
-                    0, 0, 7, 0, 1, 0, 2, 0, 5]
+sudoku_1 = [4, 7, 1, 0, 3, 5, 0, 0, 0,
+            9, 0, 0, 0, 0, 8, 0, 6, 3,
+            6, 3, 0, 1, 0, 0, 0, 5, 4,
+            7, 0, 6, 0, 0, 0, 0, 2, 0,
+            0, 9, 0, 5, 0, 0, 4, 1, 8,
+            0, 0, 0, 9, 2, 3, 5, 0, 0,
+            8, 4, 9, 0, 0, 7, 0, 0, 0,
+            0, 1, 0, 3, 0, 4, 9, 0, 0,
+            0, 0, 7, 0, 1, 0, 2, 0, 5]
 
-NYT_puzzle_medi1 = [0, 0, 0, 5, 0, 0, 0, 0, 0,
-                    2, 1, 6, 8, 0, 0, 0, 3, 0,
-                    0, 0, 0, 0, 0, 0, 8, 0, 0,
-                    4, 0, 2, 0, 7, 0, 0, 0, 0,
-                    0, 0, 3, 0, 0, 1, 0, 0, 7,
-                    5, 0, 0, 6, 4, 0, 9, 0, 0,
-                    0, 0, 0, 0, 2, 0, 7, 5, 0,
-                    3, 9, 7, 0, 0, 0, 0, 2, 0,
-                    0, 0, 0, 0, 0, 0, 4, 0, 0]
+sudoku_2 = [0, 0, 0, 5, 0, 0, 0, 0, 0,
+            2, 1, 6, 8, 0, 0, 0, 3, 0,
+            0, 0, 0, 0, 0, 0, 8, 0, 0,
+            4, 0, 2, 0, 7, 0, 0, 0, 0,
+            0, 0, 3, 0, 0, 1, 0, 0, 7,
+            5, 0, 0, 6, 4, 0, 9, 0, 0,
+            0, 0, 0, 0, 2, 0, 7, 5, 0,
+            3, 9, 7, 0, 0, 0, 0, 2, 0,
+            0, 0, 0, 0, 0, 0, 4, 0, 0]
 
-NYT_puzzle_medi2 = [0, 0, 0, 0, 0, 5, 1, 0, 0,
-                    0, 0, 0, 6, 0, 0, 9, 0, 7,
-                    8, 2, 0, 0, 0, 0, 6, 0, 0,
-                    0, 5, 0, 0, 8, 0, 4, 0, 0,
-                    0, 0, 0, 0, 7, 0, 0, 0, 0,
-                    0, 0, 4, 0, 0, 9, 2, 0, 8,
-                    0, 0, 2, 3, 0, 0, 0, 0, 0,
-                    0, 0, 0, 0, 5, 0, 0, 0, 1,
-                    6, 3, 0, 2, 0, 4, 0, 0, 9]
-
-NYT_puzzle_hard1 = [0, 0, 0, 5, 0, 0, 0, 0, 0,
-                    0, 9, 0, 0, 0, 3, 0, 4, 0,
-                    0, 0, 4, 9, 1, 0, 0, 8, 0,
-                    0, 6, 9, 0, 0, 4, 8, 3, 0,
-                    0, 0, 8, 1, 0, 0, 0, 0, 6,
-                    4, 0, 0, 0, 0, 0, 5, 0, 0,
-                    0, 0, 0, 0, 0, 0, 0, 0, 7,
-                    3, 0, 0, 0, 6, 0, 1, 0, 0,
-                    6, 7, 0, 0, 2, 0, 0, 0, 0]
-
-# TODO: After Castle 4, design a recursive solution to solve NYT_puzzle_med2.
-sudoku_solver = SudokuSolver(NYT_puzzle_medi1)
+sudoku_solver = SudokuSolver(sudoku_2)
 sudoku_solver.solution()

@@ -1,4 +1,3 @@
-from collections import deque
 import pygal
 import timeit
 import random
@@ -86,7 +85,10 @@ def python_search(alist, item):
     return False
 
 
-print("\nSearching random elements in an ordered list using sequential search vs. recursive binary search vs. Python In.")
+# ================================================== Test 1 ========================================================
+
+
+print("\nSearching random elements in ordered list using sequential search vs. recursive binary search vs. Python In.")
 print('%27s%18s%18s' % ('Ord Sequential', 'Ord Binary', 'Ord Python'))
 sequential_time = timeit.Timer("ordered_sequential_search(x,random.randint(1, size))",
                                "from __main__ import ordered_sequential_search,x,size,random")
@@ -119,7 +121,11 @@ for size in range(10, 411, 100):
     print("Size %d: %10.5f  %20.5f  %20.5f"
           % (size, sequential_speed, recursive_binary_speed, python_speed))
 
-print("\nSearching random elements in an unordered list using sequential search vs. recursive binary search vs Python In.")
+
+# ================================================== Test 2 ========================================================
+
+
+print("\nSearching random elements in unordered list using sequential search vs. recursive binary search vs Python In.")
 print('%29s%18s%18s' % ('Unord Sequential', 'Unord Binary', 'Unord Python'))
 sequential_time = timeit.Timer("sequential_search(x,random.randint(1, size))",
                                "from __main__ import sequential_search,x,size,random")
@@ -164,10 +170,10 @@ bar_chart.add('Un Sequential', unord_sequential_times)
 bar_chart.render_to_file('graphs/timeit.seq_bin_search.svg')
 
 
-# ====================================================
+# ================================================== Test 3 ========================================================
 
 print("\nSearching random elements in an ordered list using customized binary searches.")
-print('%29s%18s%18s' % ('Recursive Binary', 'Iterative Binary', 'Recursive Binary Pass'))
+print('%29s%18s%21s' % ('Recursive Binary', 'Iterative Binary', 'Recursive Binary'))
 recursive_binary_time = timeit.Timer("recursive_binary_search(x,random.randint(1, size))",
                                      "from __main__ import recursive_binary_search,x,size,random")
 iterative_binary_time = timeit.Timer("iterative_binary_search(x,random.randint(1, size))",

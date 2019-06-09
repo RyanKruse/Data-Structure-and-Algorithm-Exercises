@@ -1,6 +1,6 @@
 import pygal
 import timeit
-from random import randint, randrange, choice, sample
+from random import randint, randrange, sample
 
 
 # ================================================== Test 1 ========================================================
@@ -48,12 +48,9 @@ for list_size in range(100000, 500001, 100000):
     print("List size %d: %10.5f  %15.5f" % (list_size, get_speed, set_speed))
 
 
-# ================================================== Test 4? ========================================================
+# ================================================== Test 4 =========================================================
 
 
-# Note: You can delete a list counting backward but not forward.
-# del my_dict[(choice(my_dict.keys()))] doesn't work?
-# Why does del for dictionary take O(n) time? Should be O(1)?
 def test1(my_list):
     while my_list:
         del my_list[randrange(len(my_list))]

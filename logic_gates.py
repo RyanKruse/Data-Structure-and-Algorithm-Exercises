@@ -1,3 +1,6 @@
+# Implementation of the full logic gate ADT, child logic gate inheritances, and gate pin connections.
+
+
 class LogicGate:
     def __init__(self, name=''):
         self.id = name
@@ -12,7 +15,6 @@ class LogicGate:
     def get_output(self):
         """
          Returns the calculated output for this gate, after pin inputs and logic is calculated.
-
          If this gate is connected to another gate as a FromLogicGate, our output will become the pin input for the
          ToLogicGate; this occurs in the get_input() function for the ToLogicGate object.
          """
@@ -256,7 +258,7 @@ def append_group(gate):
     group.append(gate)
 
 
-def test_case_1():
+def test_1(group):
     """Test Case 1: A 4-Bit Adder. Input 2 binary numbers in backward order to see the sum."""
     gate_list = []
     answer_string = ''
@@ -281,7 +283,7 @@ def test_case_1():
     print('The sum is %s.' % answer_string)
 
 
-def test_case_2():
+def test_2():
     """
     Test Case 2.1: A fuller adder circuit. Input the gates and compare the results with the matrix table.
     Test Case 2.2: A half adder circuit. Input the gates and compare the results with the matrix table.
@@ -312,7 +314,7 @@ def test_case_2():
     print(g1.get_output())
 
 
-def test_case_3():
+def test_3():
     """Test Case 3: Expected G8 output is 1 only if all inputs from G1 to G8 are 0."""
     # Block 1
     g1 = AndGate('G1')
@@ -338,7 +340,7 @@ def test_case_3():
 
 
 group = []
-test_case_1()
-test_case_2()
-test_case_3()
+test_1(group)
+test_2()
+test_3()
 
