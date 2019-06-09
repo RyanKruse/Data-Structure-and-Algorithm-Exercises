@@ -152,21 +152,18 @@ for size in range(10, 411, 100):
           % (size, sequential_speed, recursive_binary_speed, python_speed))
 
 
-# TODO: Split bar graph between ordered and unordered searches.
-# TODO: Python vs. Iterative Bin vs. Recursive Pass Bin vs. Recursive Bin vs. Sequential
-
 print('\nThe above data for the sequential and binary search was graphed as timeit.seq_bin_search.svg')
 bar_chart = pygal.Bar()
-bar_chart.title = "Speed of Sequential Search vs. Binary Search"
+bar_chart.title = "Speed of Python, Binary, and Sequential Searches in Ordered and Randomly Sorted Lists"
 bar_chart.x_labels = ['10', '110', '210', '310', '410']
-bar_chart.x_title = "Size"
+bar_chart.x_title = "List Size"
 bar_chart.y_title = "Speed (Seconds)"
-bar_chart.add('Or Python', ord_python_times)
-bar_chart.add('Un Python', unord_python_times)
-bar_chart.add('Or Binary', ord_recursive_binary_times)
-bar_chart.add('Un Binary', unord_recursive_binary_times)
-bar_chart.add('Or Sequential', ord_sequential_times)
-bar_chart.add('Un Sequential', unord_sequential_times)
+bar_chart.add('Ord Python', ord_python_times)
+bar_chart.add('Ran Python', unord_python_times)
+bar_chart.add('Ord Binary', ord_recursive_binary_times)
+bar_chart.add('Ran Binary', unord_recursive_binary_times)
+bar_chart.add('Ord Sequential', ord_sequential_times)
+bar_chart.add('Ran Sequential', unord_sequential_times)
 bar_chart.render_to_file('graphs/timeit.seq_bin_search.svg')
 
 
